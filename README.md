@@ -1,2 +1,2 @@
 # vizinhos-seguros
-Aplicativo para segurança de bairros e vizinhanças
+Back end Aplicativo para segurança de bairros e vizinhanças
