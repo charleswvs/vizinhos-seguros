@@ -1,17 +1,24 @@
 import Usuario from '../models/Usuario';
 
 class UsuarioController {
-  // cria um usuário na base de dados
   async index(req, res) {
     return res.json({ hello: 'world' });
   }
 
+  // cria um usuário na base de dados
   async store(req, res) {
-    const { email, nome, hash_senha } = req.body;
+    // pega os as variáveis do corpo da requisição
+    const { email, nome, senha } = req.body;
 
-    await Usuario.create({ nome, email, hash_senha });
+    // cria um usuário no banco
+    const usuario = await Usuario.create({
+      nome,
+      email,
+      hash_senha: senha,
+    });
 
-    return res.json({ nome, email, hash_senha });
+    console.log(usuario); // retorna em json os objetos e dá um status 200
+    return res.status(200).json(usuario);
   }
 }
 

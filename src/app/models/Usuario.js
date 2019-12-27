@@ -4,7 +4,7 @@ class Usuario extends Model {
   static init(sequelize) {
     super.init(
       {
-        name: Sequelize.STRING,
+        nome: Sequelize.STRING,
         email: Sequelize.STRING,
         hash_senha: Sequelize.STRING,
       },
@@ -12,6 +12,8 @@ class Usuario extends Model {
         sequelize,
       }
     );
+    // return the used method
+    return this;
   }
 }
 
